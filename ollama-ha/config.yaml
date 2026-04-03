@@ -2,10 +2,10 @@ name: "Ollama-HA"
 slug: "ollama-ha"
 version: "0.2.4"
 description: "Run Ollama LLM server locally on your Home Assistant instance."
-url: "https://github.com/peyanski/ollama-ha"
+url: "https://github.com/darcy-buttrose/ollama-ha"
 startup: services
 init: false
-image: ghcr.io/peyanski/{arch}-ollama-ha
+image: ghcr.io/darcy-buttrose/{arch}-ollama-ha
 arch:
   - amd64
   - aarch64
@@ -18,9 +18,13 @@ video: true
 options:
   gpu: false
   start_auth: false
+  env_vars: []
 schema:
   gpu: bool
   start_auth: bool
+  env_vars:
+    - name: str
+      value: str
 
 environment:
   HOME: "/data"

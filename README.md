@@ -16,7 +16,7 @@ Run [Ollama](https://ollama.com/) locally on your Home Assistant instance.
 1.  **Add Repository**:
     - Go to **Settings** > **Apps** > **App Store**.
     - Click the three dots in the top right > **Repositories**.
-    - Add the URL of this repository: `https://github.com/peyanski/ollama-ha`.
+    - Add the URL of this repository: `https://github.com/darcy-buttrose/ollama-ha`.
 2.  **Install App**:
     - Scroll down or search for "Ollama".
     - Click **Install**. *(This is the long step!)*

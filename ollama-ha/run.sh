@@ -4,6 +4,11 @@
 GPU_SUPPORT=$(jq -r '.gpu' /data/options.json)
 START_AUTH=$(jq -r '.start_auth' /data/options.json)
 
+# Export user-defined environment variables
+while IFS= read -r line; do
+    export "$line"
+done < <(jq -r '.env_vars[] | "\(.name)=\(.value)"' /data/options.json)
+
 # Ensure persistence
 export HOME="/data"
 mkdir -p /data/.ollama
