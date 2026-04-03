@@ -5,9 +5,13 @@ GPU_SUPPORT=$(jq -r '.gpu' /data/options.json)
 START_AUTH=$(jq -r '.start_auth' /data/options.json)
 
 # Export user-defined environment variables
+echo"Importing environment variables from /data/options.json"
+echo "---------------------------------------------------------"
 while IFS= read -r line; do
+    echo "Exporting environment variable: |$line|"
     export "$line"
 done < <(jq -r '.env_vars[] | "\(.name)=\(.value)"' /data/options.json)
+echo "---------------------------------------------------------"
 
 # Ensure persistence
 export HOME="/data"
